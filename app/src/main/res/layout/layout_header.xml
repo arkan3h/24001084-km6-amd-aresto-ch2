@@ -35,8 +35,8 @@
 
     <ImageView
         android:id="@+id/iv_cart_menu"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:src="@drawable/ic_cart_empty"
         android:layout_gravity="center_vertical"
         app:layout_constraintTop_toTopOf="@id/tv_title_header"
@@ -48,8 +48,8 @@
 
     <ImageView
         android:id="@+id/iv_profile_menu"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:src="@drawable/ic_account_profile"
         android:layout_gravity="center_vertical"
         app:layout_constraintTop_toTopOf="@id/tv_title_header"
