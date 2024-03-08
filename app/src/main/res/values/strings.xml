@@ -4,4 +4,8 @@
     <string name="text_subtitle_header">Mau makan apa hari ini?</string>
     <string name="desc_cart_menu">Menu Keranjang</string>
     <string name="desc_profile_menu">Menu Profil</string>
+    <string name="text_banner_name">Diskon 20%</string>
+    <string name="text_banner_desc">Pesan makanan lewat aplikasi dan dapatkan diskonmu</string>
+    <string name="desc_image_banner">Gambar banner</string>
+    <string name="desc_image_icon_banner">Gambar logo banner</string>
 </resources>
