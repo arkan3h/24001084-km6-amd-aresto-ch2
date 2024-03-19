@@ -1,10 +1,10 @@
-package com.arkan.aresto.adapter
+package com.arkan.aresto.data.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.arkan.aresto.data.model.Category
 import com.arkan.aresto.databinding.ItemCategoryBinding
-import com.arkan.aresto.model.Category
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>(){
     private val data = mutableListOf<Category>()

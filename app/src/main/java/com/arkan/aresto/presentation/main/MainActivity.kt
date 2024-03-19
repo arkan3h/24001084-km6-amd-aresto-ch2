@@ -1,10 +1,11 @@
-package com.arkan.aresto
+package com.arkan.aresto.presentation.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.arkan.aresto.R
 import com.arkan.aresto.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
