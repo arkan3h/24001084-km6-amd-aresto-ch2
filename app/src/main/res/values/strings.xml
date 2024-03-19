@@ -11,4 +11,10 @@
     <string name="text_title_list">List Menu Makanan</string>
     <string name="desc_image_list_grid">Ubah tampilan grid ke list</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desc_image_product">Produk Makanan</string>
+    <string name="desc_back_button">tombol kembali</string>
+    <string name="desc_icon_location">ikon lokasi</string>
+    <string name="text_location">Lokasi</string>
+    <string name="desc_ic_plus_cart">Menambahkan makanan di keranjang</string>
+    <string name="desc_ic_minus_cart">Mengurangi makanan di keranjang</string>
 </resources>
