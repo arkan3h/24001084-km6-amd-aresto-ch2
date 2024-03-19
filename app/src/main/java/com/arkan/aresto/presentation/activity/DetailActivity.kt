@@ -1,5 +1,7 @@
 package com.arkan.aresto.presentation.activity
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,8 @@ class DetailActivity : AppCompatActivity() {
     }
     private var productQty: Int = 1
     private var totalPrice: Double = 0.0
+    private lateinit var url: String
+    private var price: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,15 @@ class DetailActivity : AppCompatActivity() {
         getIntentData()
         backNavigation()
         addToCart()
+        navigateToMaps()
+    }
+
+    private fun navigateToMaps() {
+        binding.layoutLocation.layoutLocation.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW)
+            i.setData(Uri.parse(url))
+            startActivity(i)
+        }
     }
 
     private fun addToCart() {
@@ -61,12 +74,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun totalPrice() {
-        intent.extras?.getParcelable<Product>(EXTRAS_ITEM_ACT)?.let {
-            totalPrice = it.price * productQty
-            binding.layoutAddToCart.btnAddToCart.text = buildString {
-                append("Tambahkan ke Keranjang - ")
-                append(totalPrice.toIndonesianFormat())
-            }
+        totalPrice = price * productQty
+        binding.layoutAddToCart.btnAddToCart.text = buildString {
+            append("Tambahkan ke Keranjang - ")
+            append(totalPrice.toIndonesianFormat())
         }
     }
 
@@ -83,6 +94,8 @@ class DetailActivity : AppCompatActivity() {
             binding.tvProductPrice.text = it.price.toIndonesianFormat()
             binding.tvProductDesc.text = it.desc
             binding.layoutLocation.tvProductAddress.text = it.address
+            price = it.price
+            url = it.addressUrl
         }
     }
 }
