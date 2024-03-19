@@ -1,8 +1,11 @@
 package com.arkan.aresto.data.model
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
+import kotlinx.parcelize.Parcelize
 import java.util.UUID
 
+@Parcelize
 data class Product(
     val id: String = UUID.randomUUID().toString(),
     @DrawableRes
@@ -12,4 +15,4 @@ data class Product(
     var desc: String,
     var address: String,
     var addressUrl: String
-)
+) : Parcelable

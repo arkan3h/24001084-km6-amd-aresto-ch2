@@ -1,5 +1,6 @@
 package com.arkan.aresto.presentation.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.arkan.aresto.data.datasource.CategoryDataSourceImpl
 import com.arkan.aresto.data.datasource.ProductDataSource
 import com.arkan.aresto.data.datasource.ProductDataSourceImpl
 import com.arkan.aresto.databinding.FragmentHomeBinding
+import com.arkan.aresto.presentation.activity.DetailActivity
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -68,7 +70,7 @@ class HomeFragment : Fragment() {
             listMode = listMode,
             listener = object : OnItemCLickedListener<Product> {
                 override fun onItemClicked(item: Product) {
-//                    navigateToDetail2(item)
+                    navigateToDetail(item)
                 }
             }
         )
@@ -87,5 +89,15 @@ class HomeFragment : Fragment() {
             adapter = this@HomeFragment.categoryAdapter
         }
         categoryAdapter.submitData(categoryDataSource.getCategoryList())
+    }
+
+    private fun startActivity(item: Product) {
+        val intent = Intent(activity, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRAS_ITEM_ACT, item)
+        startActivity(intent)
+    }
+
+    private fun navigateToDetail(item: Product) {
+        startActivity(item)
     }
 }
