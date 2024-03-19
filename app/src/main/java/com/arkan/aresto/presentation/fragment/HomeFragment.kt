@@ -47,15 +47,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun setClickAction() {
-        binding.ivListMenu.setOnClickListener {
+        binding.layoutListMenu.ivListMenu.setOnClickListener {
             isUsingGridMode = !isUsingGridMode
-            setButtonText(isUsingGridMode)
+            setButtonImage(isUsingGridMode)
             bindProductList(isUsingGridMode)
         }
     }
 
-    private fun setButtonText(usingGridMode: Boolean) {
-        binding.ivListMenu.setBackgroundResource(if (usingGridMode)
+    private fun setButtonImage(usingGridMode: Boolean) {
+        binding.layoutListMenu.ivListMenu.setImageResource(if (usingGridMode)
             R.drawable.ic_grid_list
         else
             R.drawable.ic_list_grid)
