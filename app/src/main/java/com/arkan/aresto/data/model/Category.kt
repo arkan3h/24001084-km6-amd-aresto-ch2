@@ -1,4 +1,4 @@
-package com.arkan.aresto.model
+package com.arkan.aresto.data.model
 
 import androidx.annotation.DrawableRes
 import java.util.UUID

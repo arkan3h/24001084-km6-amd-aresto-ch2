@@ -19,6 +19,7 @@
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="140dp"
+            app:layout_constraintDimensionRatio="1:1"
             tools:src="@tools:sample/avatars"
             app:shapeAppearanceOverlay="@style/image_rounded_small"
             app:layout_constraintStart_toStartOf="parent"
