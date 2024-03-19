@@ -18,6 +18,8 @@ class DetailActivity : AppCompatActivity() {
     private val binding: ActivityDetailBinding by lazy {
         ActivityDetailBinding.inflate(layoutInflater)
     }
+    private var productQty: Int = 1
+    private var totalPrice: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,42 @@ class DetailActivity : AppCompatActivity() {
         }
         getIntentData()
         backNavigation()
+        addToCart()
+    }
+
+    private fun addToCart() {
+        binding.layoutAddToCart.tvQtyProduct.text = productQty.toString()
+        addQtyProduct()
+        removeQtyProduct()
+        totalPrice()
+    }
+
+    private fun addQtyProduct() {
+        binding.layoutAddToCart.btnPlusCart.setOnClickListener {
+            productQty += 1
+            addToCart()
+        }
+    }
+
+    private fun removeQtyProduct() {
+        binding.layoutAddToCart.btnMinusCart.setOnClickListener {
+            productQty -= 1
+            if (productQty > 0) {
+                addToCart()
+            } else {
+                productQty = 1
+            }
+        }
+    }
+
+    private fun totalPrice() {
+        intent.extras?.getParcelable<Product>(EXTRAS_ITEM_ACT)?.let {
+            totalPrice = it.price * productQty
+            binding.layoutAddToCart.btnAddToCart.text = buildString {
+                append("Tambahkan ke Keranjang - ")
+                append(totalPrice.toIndonesianFormat())
+            }
+        }
     }
 
     private fun backNavigation() {
